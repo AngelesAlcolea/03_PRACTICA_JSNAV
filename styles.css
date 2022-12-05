@@ -1,0 +1,8 @@
+.contador {
+    display: flex;
+    justify-content: space-evenly;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(216, 204, 204);
+}
