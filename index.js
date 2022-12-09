@@ -6,23 +6,39 @@ buttonElement.addEventListener("click", () => {
 
     let transaction = {
         concept: concept.value,
-        quantity: quantity.value
+        quantity: Number(quantity.value)
     };
 
     localStorage.setItem("transaction", transaction.concept + " " + transaction.quantity);
+    localStorage.setItem("quantity", transaction.quantity);
 
-    const transactionListElement = document.querySelector("#transactionList");
+    const textFromLocalStorage = localStorage.getItem("transaction");
 
-    transactionListElement.textContent = transaction.concept + " " + transaction.quantity;
-
-    concept.value = "";
-    quantity.value = "";
+    if (textFromLocalStorage !== null && textFromLocalStorage != 0) {
+        const newTransaction = document.createElement("p");
+        newTransaction.textContent = textFromLocalStorage;
+        const transactionListElement = document.querySelector("#transactionList");
+        transactionListElement.appendChild(newTransaction);
+    }
 });
 
-const textFromLocalStorage = localStorage.getItem("transaction");
+const balanceFromLocalStorage = localStorage.getItem("quantity");
 
-if (textFromLocalStorage !== null) {
-    const transactionListElement = document.querySelector("#transactionList");
-
-    transactionListElement.textContent = textFromLocalStorage;
+if (localStorage.getItem("quantity") > 0) {
+    const incomeFromLocalStorage = localStorage.getItem("quantity");
+    const expenseFromLocalStorage = 0;
+    const incomeElement = document.querySelector("#incomesIndex");
+    const expenseElement = document.querySelector("#expensesIndex");
+    expenseElement.textContent = expenseFromLocalStorage + " €";
+    incomeElement.textContent = incomeFromLocalStorage + " €";
+} else {
+    const expenseFromLocalStorage = localStorage.getItem("quantity");
+    const incomeFromLocalStorage = 0;
+    const incomeElement = document.querySelector("#incomesIndex");
+    const expenseElement = document.querySelector("#expensesIndex");
+    expenseElement.textContent = expenseFromLocalStorage + " €";
+    incomeElement.textContent = incomeFromLocalStorage + " €";
 }
+
+const balanceElement = document.querySelector("#balanceIndex");
+balanceElement.textContent = balanceFromLocalStorage + " €";
