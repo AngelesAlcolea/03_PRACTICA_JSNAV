@@ -1,8 +1,44 @@
-.contador {
+html {
+    margin: 0 40px;
+    font-family: 'Helvetica', sans-serif;
+}
+
+body {
+    margin: 0;
+    display: grid;
+    row-gap: 20px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.saves {
+    display: grid;
+    row-gap: 10px;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+form {
+    display: grid;
+    row-gap: 10px;
+}
+
+form label {
+    display: grid;
+    row-gap: 5px;
+}
+
+.counter {
     display: flex;
     justify-content: space-evenly;
     width: 75%;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgb(216, 204, 204);
+    background-color: rgb(241, 239, 239);
 }

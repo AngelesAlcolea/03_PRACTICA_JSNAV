@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <h1>Control de gastos</h1>
-    <div>
-        <p>Tu ahorro</p>
-        <p>0.00€</p>
+    <h1 class="title">Control de gastos</h1>
+    <div class="saves">
+        <p class="no-margin">Tu ahorro</p>
+        <p class="no-margin">0.00€</p>
     </div>
-    <div class="contador">
+    <div class="counter">
         <div>
             <p>Ingreso</p>
             <p>0.00€</p>
@@ -25,13 +25,17 @@
     </div>
     <div>
         <p>Historial</p>
-        <p>Transacción 1</p>
+        <p id="transactionList"></p>
     </div>
     <p>Añadir nueva transacción</p>
-    <form action="">
-        <label for="">Concepto<input type="text" placeholder="Añade concepto..."></label>
-        <label for="">Cantidad<input type="text" placeholder="Introduce cantidad..."></label>
-        <button type="submit" value="Añadir transacción"></button>
+    <form>
+        <label for="">Concepto
+            <input id="concept" type="text" placeholder="Añade concepto...">
+        </label>
+        <label for="">Cantidad
+            <input id="quantity" type="text" placeholder="Introduce cantidad...">
+        </label>
+        <button type="submit" id="addTransaction">Añadir transacción</button>
     </form>
     <script src="./index.js"></script>
 </body>
